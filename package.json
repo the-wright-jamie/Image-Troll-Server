@@ -35,7 +35,7 @@
     "express-rate-limit": "^6.7.0",
     "express-slow-down": "^1.5.0",
     "path": "^0.12.7",
-    "pg": "^8.9.0",
+    "pg": "^8.10.0",
     "winston": "^3.8.2"
   }
 }
