@@ -30,7 +30,7 @@
     "bootstrap-icons": "^1.10.3",
     "canvas": "^2.11.0",
     "dotenv": "^16.0.3",
-    "ejs": "^3.1.8",
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-rate-limit": "^6.7.0",
     "express-slow-down": "^1.5.0",
