@@ -1,3 +1,5 @@
+> Click here to [see it in action!](https://troll.the-wright-jamie.dev/troll.png)
+
 # Warning
 
 This software has been created for **educational and recreational purposes ONLY** - i.e. for a bit of craic with my friends. Under no circumstances should this code be modified for malicious intent.
