@@ -20,7 +20,7 @@
   "homepage": "https://github.com/the-wright-jamie/ImageTrollServer#readme",
   "devDependencies": {
     "@types/express": "^4.17.17",
-    "@types/node": "^20.1.0",
+    "@types/node": "^20.1.4",
     "@types/pg": "^8.6.6",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.0.4"
