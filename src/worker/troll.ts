@@ -25,35 +25,42 @@ export class Troll {
         512
       );
 
-      canvasContext.font = "40px Roboto";
-      canvasContext.fillText(
-        `Emilia has something\ncool to show you!\nClick "Open in Browser"\nbelow this image! <3`,
-        5,
-        50
-      );
+      const text = `Emilia has something\nkawaii to show you!\n\n\n\n\n\nMiddle click this image\nor "Open in Browser"\nfor a surprise! ♥`;
+
+      canvasContext.font = "45px Roboto";
+      canvasContext.strokeStyle = "White";
+      canvasContext.lineWidth = 5;
+      canvasContext.strokeText(text, 15, 50);
+      canvasContext.fillText(text, 15, 50);
 
       return canvas.createPNGStream();
     } else {
       canvasContext.drawImage(
-        await loadImage(
-          "https://www.nicepng.com/png/detail/2-24510_trollface-deal-with-it-troll-face-png.png"
-        ),
+        await loadImage("./src/troll.png"),
         0,
         0,
         512,
         512
       );
 
+      var text = `Your IP address is\n${address.replace(
+        /^.*:/,
+        ""
+      )}!\n\nDon't believe me?\n\nLook up your IP\naddress on Google!`;
+
       canvasContext.font = "48px Roboto";
       canvasContext.fillStyle = "Red";
-      canvasContext.fillText(
-        `Your IP address is\n${address.replace(
-          /^.*:/,
-          ""
-        )}!\n\nDon't believe me?\n\nLook up your IP\naddress on Google!`,
-        5,
-        50
-      );
+      canvasContext.strokeStyle = "White";
+      canvasContext.lineWidth = 10;
+      canvasContext.strokeText(text, 15, 50);
+      canvasContext.fillText(text, 15, 50);
+
+      text = "This is just a troll, your IP address wasn't logged and nothing bad is going to happen.\nCheck out xsfs.xyz to learn how this works!";
+
+      canvasContext.font = "12px Roboto";
+      canvasContext.lineWidth = 5;
+      canvasContext.strokeText(text, 15, 475);
+      canvasContext.fillText(text, 15, 475);
 
       return canvas.createPNGStream();
     }

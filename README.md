@@ -1,4 +1,4 @@
-> Click here to [see it in action!](https://troll.the-wright-jamie.dev/troll.png)
+> Click here to [see it in action!](https://troll.xsfs.xyz/troll.png)
 
 # Warning
 

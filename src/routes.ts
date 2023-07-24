@@ -25,6 +25,11 @@ app.route(`/:imageName`).get(async (req, res) => {
   res.end();
 });
 
+app.route(`/`).get(async (req, res) => {
+  res.redirect("https://xsfs.xyz/articles/2023/bait-and-switch");
+  res.end();
+});
+
 // NOT MY CODE. SHOUT OUT TO https://stackoverflow.com/a/67729663
 async function stream2buffer(stream: Stream): Promise<Buffer> {
   return new Promise<Buffer>((resolve, reject) => {
