@@ -16,9 +16,7 @@ export class Troll {
     if (datacenter === true) {
       console.log(`Never mind, ${address} was a bot`);
       canvasContext.drawImage(
-        await loadImage(
-          "https://i.pinimg.com/736x/1c/54/27/1c542704455b9c3402b21214d043e9ed.jpg"
-        ),
+        await loadImage("./src/emilia.jpg"),
         0,
         0,
         512,
@@ -28,6 +26,7 @@ export class Troll {
       const text = `Emilia has something\nkawaii to show you!\n\n\n\n\n\nMiddle click this image\nor "Open in Browser"\nfor a surprise! ♥`;
 
       canvasContext.font = "45px Roboto";
+      canvasContext.fillStyle = "Purple";
       canvasContext.strokeStyle = "White";
       canvasContext.lineWidth = 5;
       canvasContext.strokeText(text, 15, 50);
