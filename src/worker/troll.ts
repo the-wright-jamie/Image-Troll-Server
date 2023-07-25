@@ -62,7 +62,7 @@ export class Troll {
         var text = `${address.replace(
           /^.*:/,
           ""
-        )}92.168.10.000`;
+        )}`;
 
         canvasContext.font = `48px "Custom3"`;
         canvasContext.fillStyle = "Red";
