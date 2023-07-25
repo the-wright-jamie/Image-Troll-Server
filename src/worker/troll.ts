@@ -1,10 +1,13 @@
-import { createCanvas, loadImage } from "canvas";
+import { registerFont, createCanvas, loadImage } from "canvas";
 import { execSync } from "child_process";
 
 export class Troll {
   async trollImage(addressInput: String): Promise<any> {
     const canvas = createCanvas(512, 512);
     const canvasContext = canvas.getContext("2d");
+    registerFont("./src/font1.ttf", { family: "Custom" });
+    registerFont("./src/font2.ttf", { family: "Custom2" });
+    registerFont("./src/font3.ttf", { family: "Custom3" });
 
     var address = addressInput.replace(/^.*:/, "");
     var datacenter = false;
@@ -23,45 +26,88 @@ export class Troll {
         512
       );
 
-      const text = `Emilia has something\nkawaii to show you!\n\n\n\n\n\nMiddle click this image\nor "Open in Browser"\nfor a surprise! ♥`;
+      var text = `Emilia has something\nkawaii to show you!`;
 
-      canvasContext.font = "45px Roboto";
+      canvasContext.font = `45px "Custom"`;
       canvasContext.fillStyle = "Purple";
       canvasContext.strokeStyle = "White";
       canvasContext.lineWidth = 5;
       canvasContext.strokeText(text, 15, 50);
       canvasContext.fillText(text, 15, 50);
 
+      text = `Middle click this\nimage for a surprise! ♥`;
+
+      canvasContext.strokeText(text, 15, 430);
+      canvasContext.fillText(text, 15, 430);
+
       return canvas.createPNGStream();
     } else {
-      canvasContext.drawImage(
-        await loadImage("./src/troll.png"),
-        0,
-        0,
-        512,
-        512
-      );
+      if (Math.floor(Math.random() * 5) < 1) {
+        canvasContext.drawImage(
+          await loadImage("./src/creep.jpg"),
+          0,
+          0,
+          512,
+          512
+        );
 
-      var text = `Your IP address is\n${address.replace(
-        /^.*:/,
-        ""
-      )}!\n\nDon't believe me?\n\nLook up your IP\naddress on Google!`;
+        canvasContext.drawImage(
+          await loadImage("./src/x.svg"),
+          10,
+          471,
+          32,
+          32
+        );
 
-      canvasContext.font = "48px Roboto";
-      canvasContext.fillStyle = "Red";
-      canvasContext.strokeStyle = "White";
-      canvasContext.lineWidth = 10;
-      canvasContext.strokeText(text, 15, 50);
-      canvasContext.fillText(text, 15, 50);
+        var text = `${address.replace(
+          /^.*:/,
+          ""
+        )}92.168.10.000`;
 
-      text = "This is just a troll, your IP address wasn't logged and nothing bad is going to happen.\nCheck out xsfs.xyz to learn how this works!";
+        canvasContext.font = `48px "Custom3"`;
+        canvasContext.fillStyle = "Red";
+        canvasContext.fillText(text, 50, 50);
 
-      canvasContext.font = "12px Roboto";
-      canvasContext.lineWidth = 5;
-      canvasContext.strokeText(text, 15, 475);
-      canvasContext.fillText(text, 15, 475);
+        return canvas.createPNGStream();
+      } else {
+        canvasContext.drawImage(
+          await loadImage("./src/troll.png"),
+          0,
+          0,
+          512,
+          512
+        );
 
-      return canvas.createPNGStream();
+        canvasContext.drawImage(
+          await loadImage("./src/x.svg"),
+          10,
+          471,
+          32,
+          32
+        );
+
+        var text = `Your IP address is:\n${address.replace(
+          /^.*:/,
+          ""
+        )}!\n\nDon't believe me?\n\nLook up 'What is\nmy IP address'!`;
+
+        canvasContext.font = `48px "Custom2"`;
+        canvasContext.fillStyle = "Red";
+        canvasContext.strokeStyle = "White";
+        canvasContext.lineWidth = 10;
+        canvasContext.strokeText(text, 15, 50);
+        canvasContext.fillText(text, 15, 50);
+
+        text =
+          "This is just a troll. Your IP address wasn't logged, nothing bad is going to happen.\nCheck out xsfs.xyz to learn how this works!";
+
+        canvasContext.font = `12px "Custom2"`;
+        canvasContext.lineWidth = 5;
+        canvasContext.strokeText(text, 50, 485);
+        canvasContext.fillText(text, 50, 485);
+
+        return canvas.createPNGStream();
+      }
     }
   }
 }
