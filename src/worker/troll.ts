@@ -43,6 +43,7 @@ export class Troll {
       return canvas.createPNGStream();
     } else {
       if (Math.floor(Math.random() * 5) < 1) {
+        console.log("Oops, they got the bad ending...")
         canvasContext.drawImage(
           await loadImage("./src/creep.jpg"),
           0,
