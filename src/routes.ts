@@ -15,11 +15,14 @@ http.createServer(app).listen(4000, () => {
 });
 
 app.route(`/:imageName`).get(async (req, res) => {
+  var xforwarded = req.headers["x-forwarded-for"]?.toString();
+  var ip = xforwarded || req.socket.remoteAddress; 
+
   console.log(
-    `${req.socket.remoteAddress} has asked for the image ${req.params.imageName} but is getting trolled instead`
+    `${ip} has asked for the image ${req.params.imageName} but is getting trolled instead`
   );
 
-  const response = await troll.trollImage(req.socket.remoteAddress!);
+  const response = await troll.trollImage(ip!);
 
   res.write(await stream2buffer(response));
   res.end();
