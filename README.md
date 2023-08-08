@@ -2,7 +2,7 @@
 
 # Warning
 
-This software has been created for **educational and recreational purposes ONLY** - i.e. for a bit of craic with my friends. Under no circumstances should this code be modified for malicious intent.
+This software has been created for **educational and recreational purposes ONLY**. Under no circumstances should this code be modified or used for malicious intent. Using this software for an unintended purpose may be **illegal**. Please be aware of the [laws](https://www.legislation.gov.uk/ukpga/1990/18/crossheading/computer-misuse-offences) [in](https://www.law.cornell.edu/uscode/text/18/1030) [your](https://rechtsanwalt-louis.de/comparison-of-computer-misuse-acts-around-the-world/) [country](https://www.afp.gov.au/what-we-do/crime-types/cyber/cybercrime-law).
 
 # Image Troll Server
 
